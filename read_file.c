@@ -1,44 +1,42 @@
 #include "shell.h"
 
 /**
- * read_stream - read a line from the stream
- *
+ * read_file - read a line from the file
  * Return: pointer that points the the read line
  */
 char *read_stream(void)
 {
- int bufsize = 1024;
- int i = 0;
- char *line = malloc(sizeof(char) * bufsize);
- int character;
-
- if (line == NULL)
- {
-  fprintf(stderr, "allocation error in read_stream");
-  exit(EXIT_FAILURE);
- }
- while (1)
- {
-  character = getchar(); /* read first char from stream */
-  if (character == EOF)
-  {
-   free(line);
-   exit(EXIT_SUCCESS);
-  }
-else if (character == '\n')
+int bufs = 1024; //buff size
+int i = 0;
+char *line = malloc(sizeof(char) * bufs);
+int charr;
+if (line == NULL)
+{
+fprintf(stderr, "allocation error in read_stream");
+exit(EXIT_FAILURE);
+}
+while (1)
+{
+charr = getchar(); /* read first char from stream */
+if (charr == EOF)
+{
+free(line);
+exit(EXIT_SUCCESS);
+}
+else if (charr == '\n')
 {
 line[i] = '\0';
 return (line);
 }
 else
 {
-line[i] = character;
+line[i] = charr;
 }
 i++;
-if (i >= bufsize)
+if (i >= bufs)
 {
-bufsize += bufsize;
-line = realloc(line, bufsize);
+bufs += bufs;
+line = realloc(line, bufs);
 if (line == NULL)
 {
 fprintf(stderr, "reallocation error in read_stream");
