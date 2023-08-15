@@ -12,21 +12,25 @@
 #define TOK_DELIM " \t\r\n\a\""
 extern char **environ;
 
-/*---PROTOTYPES---*/
+/*---FUNCTION PROTOTYPES---*/
 /* main.c */
-void interactive(void); // instead of shell_interactive
-void no_interactive(void); // instead of shell_no_interactive
+/*interactive and no_interactive mode functions*/
+void interactive(void);
+void no_interactive(void);
 
 /* shell_interactive.c */
-char *read_cmd(void); //instead of read_line
-char **split_cmd(char *line); // instead of split_line
+/*function to read user input*/
+char *read_cmd(void);
+/*function to split input string*/
+char **split_cmd(char *line);
 int execute_args(char **args);
 
 /* execute_args */
 int new_process(char **args);
 
 /* shell_no_interactive */
-char *read_file(void); //instead of read_stream
+/*function to read from file stream*/
+char *read_file(void);
 
 /*---Builtin func---*/
 int own_cd(char **args);
