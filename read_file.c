@@ -6,7 +6,7 @@
  */
 char *read_stream(void)
 {
-int bufs = 1024; //buff size
+int bufs = 1024;
 int i = 0;
 char *line = malloc(sizeof(char) * bufs);
 int charr;
