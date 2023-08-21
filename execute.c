@@ -19,7 +19,7 @@ int execute_cmd(char **agmts)
 	}
 
 	/*determine if a command is builtin or not*/
-	for (; i < (int)(sizeof(builtin_cmdlist) / sizeof(char *)); i++)
+	for (; i < sizeof(builtin_cmdlist) / sizeof(char *); i++)
 	{
 		/*execute the builtin command*/
 		if (strcmp(agmts[0], builtin_cmdlist[i]) == 0)
