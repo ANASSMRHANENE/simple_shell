@@ -2,7 +2,7 @@
 /**
  * read_cmd - function to read commands from the stdin
  * Description: the function will read user entered commands
- * Return: Returns nothing
+ * Return: pointer
  */
 char *read_cmd(void)
 {
