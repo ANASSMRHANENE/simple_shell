@@ -4,28 +4,28 @@
  * Description: the function will read user entered commands
  * Return: Returns nothing
  */
-char read_cmd(void)
+char *read_cmd(void)
 {
-	char *line = NULL;
-	size_t bufsize = 0;
+	char *in_str = NULL;
+	size_t buffer_size = 0;
 
 	/*incase of failure of getline*/
-	if (getline(&line, &bufsize, stdin) == -1)
+	if (getline(&in_str, &buffer_size, stdin) == -1)
 	{
 		/*test for end of file*/
 		if (feof(stdin))
 		{
 			/*prevent memory leaks*/
-			free(line);
+			free(in_str);
 			exit(EXIT_SUCCESS);
 		}
 		else
 		{
 			/*prevent memory leaks*/
-			free(line);
+			free(in_str);
 			perror("error while reading from stdin");
 			exit(EXIT_FAILURE);
 		}
 	}
-	return (line);
+	return (in_str);
 }

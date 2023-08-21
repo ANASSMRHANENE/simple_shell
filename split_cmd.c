@@ -1,45 +1,45 @@
 #include "shell.h"
 /**
  * split_cmd - function to split input string
- * @line: the input string
+ * @in_str: the input string
  * Description: the function that split input string
  * Return: Returns nothing
  */
-char **split_cmd(char *line)
+char **split_cmd(char *in_str)
 {
-	int bufsize = 64;
+	int buffer_size = 64;
 	int i = 0;
-	char **tokens = malloc(bufsize * sizeof(char *));
-	char *token;
+	char **tkns = malloc(buffer_size * sizeof(char *));
+	char *tkn;
 
-	if (!tokens)
+	if (!tkns)
 	{
 		fprintf(stderr, "allocation error in split_cmd: tokens\n");
 		exit(EXIT_FAILURE);
 	}
-	token = strtok(line, TOK_DELIM);
-	while (token != NULL)
+	tkn = strtok(in_str, TKN_DELIMITER);
+	while (tkn != NULL)
 	{
-		if (token[0] == '#')
+		if (tkn[0] == '#')
 		{
 			break;
 		}
-		tokens[i] = token;
+		tkns[i] = tkn;
 		i++;
 
-		if (i >= bufsize)
+		if (i >= buffer_size)
 		{
-			bufsize += bufsize;
-		tokens = realloc(tokens, bufsize * sizeof(char *));
-		if (!tokens)
+			buffer_size += buffer_size;
+		tkns = realloc(tkns, buffer_size * sizeof(char *));
+		if (!tkns)
 		{
 			fprintf(stderr, "reallocation error in split_cmd: tokens\n");
 			exit(EXIT_FAILURE);
 		}
 
 		}
-		token = strtok(NULL, TOK_DELIM);
+		tkn = strtok(NULL, TKN_DELIMITER);
 	}
-	tokens[i] = NULL;
-	return (tokens);
+	tkns[i] = NULL;
+	return (tkns);
 }
