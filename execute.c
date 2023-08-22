@@ -7,7 +7,7 @@
  */
 int execute_cmd(char **agmts)
 {
-	long unsigned int n = 0;
+	long unsigned int i = 0;
 	char *builtin_cmdlist[] = {"exit"};
 
 	int (*builtin_cmd[])(char **) = {&my_exit};
@@ -19,12 +19,12 @@ int execute_cmd(char **agmts)
 	}
 
 	/*determine if a command is builtin or not*/
-	for (; n < sizeof(builtin_cmdlist) / sizeof(char *); n++)
+	for (; i < sizeof(builtin_cmdlist) / sizeof(char *); i++)
 	{
 		/*execute the builtin command*/
-		if (strcmp(agmts[0], builtin_cmdlist[n]) == 0)
+		if (strcmp(agmts[0], builtin_cmdlist[i]) == 0)
 		{
-			return ((*builtin_cmd[n])(agmts));
+			return ((*builtin_cmd[i])(agmts));
 		}
 	}
 	/*fork a process*/
