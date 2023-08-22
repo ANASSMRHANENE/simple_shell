@@ -7,10 +7,10 @@
  */
 int execute_cmd(char **agmts)
 {
-	int i = 0;
-	char *builtin_cmdlist[] = {"exit", "help", "env", "cd"};
+	long unsigned int i = 0;
+	char *builtin_cmdlist[] = {"exit"};
 
-	int (*builtin_cmd[])(char **) = {&my_exit, &my_help, &my_env, &my_cd};
+	int (*builtin_cmd[])(char **) = {&my_exit};
 
 	if (agmts[0] == NULL)
 	{

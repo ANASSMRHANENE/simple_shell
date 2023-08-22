@@ -35,7 +35,4 @@ char *read_file(void);
 
 /*Builtin functions*/
 int my_exit(char **agmts);
-int my_env(char **agmts);
-int my_help(char **agmts);
-int my_cd(char **agmts);
 #endif
