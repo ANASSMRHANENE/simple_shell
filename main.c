@@ -8,12 +8,12 @@ int main(void)
 {
 	if (isatty(0) == 1)
 	{
-		interactive();
+		interactive_mode();
 	}
 
 	else
 	{
-		no_interactive();
+		noninteractive_mode();
 	}
 
 	return (0);
