@@ -7,7 +7,7 @@
  */
 int execute_cmd(char **agmts)
 {
-	long unsigned int i = 0;
+	unsigned long int i = 0;
 	char *builtin_cmdlist[] = {"exit"};
 
 	int (*builtin_cmd[])(char **) = {&my_exit};
