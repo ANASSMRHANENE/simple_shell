@@ -1,10 +1,9 @@
 #include "shell.h"
 
 /**
- * list_len - determines length of linked list
- * @h: pointer to first node
- *
- * Return: size of list
+ * lstlen - get length of linked list
+ * @h: pointer
+ * Return: the size
  */
 size_t lstlen(const list_t *h)
 {
@@ -19,12 +18,12 @@ size_t lstlen(const list_t *h)
 }
 
 /**
- * list_to_strings - returns an array of strings of the list->str
+ * list_strings - returns an array of strings of the list->str
  * @head: pointer to first node
  *
  * Return: array of strings
  */
-char **list_to_strings(list_t *head)
+char **list_strings(list_t *head)
 {
 	list_t *node = head;
 	size_t i = lstlen(head), j;
