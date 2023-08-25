@@ -98,13 +98,13 @@ list_t *nd_start(list_t *node, char *prefix, char c)
 }
 
 /**
- * get_node_index - gets the index of a node
- * @head: pointer to list head
- * @node: pointer to the node
+ * node_index - index of  node
+ * @head: pointer
+ * @node: pointer node
  *
  * Return: index of node or -1
  */
-ssize_t get_node_index(list_t *head, list_t *node)
+ssize_t node_index(list_t *head, list_t *node)
 {
 	size_t i = 0;
 

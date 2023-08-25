@@ -223,7 +223,7 @@ size_t lstlen(const list_t *);
 char **list_strings(list_t *);
 size_t printlst(const list_t *);
 list_t *nd_start(list_t *, char *, char);
-ssize_t get_node_index(list_t *, list_t *);
+ssize_t node_index(list_t *, list_t *);
 
 /* toem_vars.c */
 int is_chain(info_t *, char *, size_t *);
