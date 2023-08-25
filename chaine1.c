@@ -83,7 +83,7 @@ size_t printlst(const list_t *h)
  *
  * Return: node or null
  */
-list_t *ndstart(list_t *node, char *prefix, char c)
+list_t *nd_start(list_t *node, char *prefix, char c)
 {
 	char *p = NULL;
 

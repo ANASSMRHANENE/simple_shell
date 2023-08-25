@@ -83,7 +83,7 @@ int replace_alias(info_t *info)
 
 	for (i = 0; i < 10; i++)
 	{
-		node = ndstart(info->alias, info->argv[0], '=');
+		node = nd_start(info->alias, info->argv[0], '=');
 		if (!node)
 			return (0);
 		free(info->argv[0]);
@@ -126,7 +126,7 @@ int replace_vars(info_t *info)
 				_strdup(convert_number(getpid(), 10, 0)));
 			continue;
 		}
-		node = ndstart(info->env, &info->argv[i][1], '=');
+		node = nd_start(info->env, &info->argv[i][1], '=');
 		if (node)
 		{
 			replace_string(&(info->argv[i]),
