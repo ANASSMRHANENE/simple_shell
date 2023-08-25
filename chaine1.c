@@ -54,10 +54,9 @@ list_t *node = head;
 
 
 /**
- * printlst - prints all elements of a list_t linked list
- * @h: pointer to first node
- *
- * Return: size of list
+ * printlst - prints elements of a linked list
+ * @h: pointer
+ * Return: the size of the list
  */
 size_t printlst(const list_t *h)
 {
@@ -77,14 +76,14 @@ size_t printlst(const list_t *h)
 }
 
 /**
- * node_starts_with - returns node whose string starts with prefix
- * @node: pointer to list head
- * @prefix: string to match
- * @c: the next character after prefix to match
+ * ndstart - returns node
+ * @node: pointer list
+ * @prefix: string
+ * @c: character next
  *
- * Return: match node or null
+ * Return: node or null
  */
-list_t *node_starts_with(list_t *node, char *prefix, char c)
+list_t *ndstart(list_t *node, char *prefix, char c)
 {
 	char *p = NULL;
 
