@@ -18,39 +18,38 @@ size_t lstlen(const list_t *h)
 }
 
 /**
- * list_strings - returns an array of strings of the list->str
- * @head: pointer to first node
- *
- * Return: array of strings
+ * list_strings - return table of strings
+ * @head: pointer
+ * Return: array
  */
 char **list_strings(list_t *head)
 {
-	list_t *node = head;
+	list_t *nd = head;
 	size_t i = lstlen(head), j;
-	char **strs;
-	char *str;
+	char **s;
+	char *r;
 
 	if (!head || !i)
 		return (NULL);
-	strs = malloc(sizeof(char *) * (i + 1));
-	if (!strs)
+	s = malloc(sizeof(char *) * (i + 1));
+	if (!s)
 		return (NULL);
-	for (i = 0; node; node = node->next, i++)
+	for (i = 0; nd; nd = nd->next, i++)
 	{
-		str = malloc(_strlen(node->str) + 1);
-		if (!str)
+		r = malloc(_strlen(nd->r) + 1);
+		if (!r)
 		{
 			for (j = 0; j < i; j++)
-				free(strs[j]);
-			free(strs);
+				free(s[j]);
+			free(s);
 			return (NULL);
 		}
 
-		str = _strcpy(str, node->str);
-		strs[i] = str;
+		r = _strcpy(r, nd->r);
+		s[i] = r;
 	}
-	strs[i] = NULL;
-	return (strs);
+	s[i] = NULL;
+	return (s);
 }
 
 
