@@ -24,32 +24,32 @@ size_t lstlen(const list_t *h)
  */
 char **list_strings(list_t *head)
 {
-	list_t *nd = head;
+list_t *node = head;
 	size_t i = lstlen(head), j;
-	char **s;
-	char *r;
+	char **strs;
+	char *str;
 
 	if (!head || !i)
 		return (NULL);
-	s = malloc(sizeof(char *) * (i + 1));
-	if (!s)
+	strs = malloc(sizeof(char *) * (i + 1));
+	if (!strs)
 		return (NULL);
-	for (i = 0; nd; nd = nd->next, i++)
+	for (i = 0; node; node = node->next, i++)
 	{
-		r = malloc(_strlen(nd->r) + 1);
-		if (!r)
+		str = malloc(_strlen(node->str) + 1);
+		if (!str)
 		{
 			for (j = 0; j < i; j++)
-				free(s[j]);
-			free(s);
+				free(strs[j]);
+			free(strs);
 			return (NULL);
 		}
 
-		r = _strcpy(r, nd->r);
-		s[i] = r;
+		str = _strcpy(str, node->str);
+		strs[i] = str;
 	}
-	s[i] = NULL;
-	return (s);
+	strs[i] = NULL;
+	return (strs);
 }
 
 
