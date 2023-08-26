@@ -29,13 +29,13 @@ int _err(char *s)
 }
 
 /**
- * print_error - prints an error message
- * @info: the parameter & return info struct
- * @estr: string containing specified error type
- * Return: 0 if no numbers in string, converted number otherwise
+ * affiche_err - shows error message
+ * @info: parameter
+ * @estr: string
+ * Return: 0 if no numbers in stringotherwise
  *        -1 on error
  */
-void print_error(info_t *info, char *estr)
+void affiche_err(info_t *info, char *estr)
 {
 	_eputs(info->fname);
 	_eputs(": ");
