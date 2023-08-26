@@ -171,7 +171,7 @@ int _err(char *);
 void affiche_err(info_t *, char *);
 int pr_d(int, int);
 char *convert_num(long int, int, int);
-void remove_comments(char *);
+void rm_comment(char *);
 
 /* toem_builtin.c */
 int _myexit(info_t *);
