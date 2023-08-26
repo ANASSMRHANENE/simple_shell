@@ -75,8 +75,8 @@ int f_builtin(info_t *info)
 }
 
 /**
- * find_command - finds a command in PATH
- * @info: the parameter & return info struct
+ * find_command - finds a command
+ * @info: the parameter
  *
  * Return: void
  */
@@ -101,13 +101,13 @@ void find_command(info_t *info)
 	if (path)
 	{
 		info->path = path;
-		fork_cmd(info);
+		fork_command(info);
 	}
 	else
 	{
 		if ((interactive(info) || _getenv(info, "PATH=")
 			|| info->argv[0][0] == '/') && is_cmd(info, info->argv[0]))
-			fork_cmd(info);
+			fork_command(info);
 		else if (*(info->arg) != '\n')
 		{
 			info->status = 127;
@@ -117,12 +117,12 @@ void find_command(info_t *info)
 }
 
 /**
- * fork_cmd - forks a an exec thread to run cmd
- * @info: the parameter & return info struct
+ * fork_command - forks a an execute
+ * @info: parameter
  *
  * Return: void
  */
-void fork_cmd(info_t *info)
+void fork_command(info_t *info)
 {
 	pid_t child_pid;
 
