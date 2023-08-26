@@ -17,10 +17,10 @@ char *mrset(char *s, char b, unsigned int n)
 }
 
 /**
- * ffree - frees a string of strings
+ * sfree - frees a string string
  * @pp: string of strings
  */
-void ffree(char **pp)
+void sfree(char **pp)
 {
 	char **a = pp;
 
