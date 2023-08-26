@@ -155,7 +155,7 @@ char **strtow2(char *, char);
 /* toem_realloc.c */
 char *mrset(char *, char, unsigned int);
 void sfree(char **);
-void *_realloc(void *, unsigned int, unsigned int);
+void *re_lloc(void *, unsigned int, unsigned int);
 
 /* toem_memory.c */
 int bfree(void **);
