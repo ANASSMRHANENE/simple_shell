@@ -47,11 +47,10 @@ void affiche_err(info_t *info, char *estr)
 }
 
 /**
- * pr_d - function prints a decimal (integer) number (base 10)
- * @input: the input
- * @fd: the filedescriptor to write to
- *
- * Return: number of characters printed
+ * pr_d - function prints number (base 10)
+ * @input: input
+ * @fd: filedescriptor
+ * Return: number characters
  */
 int pr_d(int input, int fd)
 {
@@ -86,14 +85,14 @@ int pr_d(int input, int fd)
 }
 
 /**
- * convert_number - converter function, a clone of itoa
+ * convert_num - convert function
  * @num: number
  * @base: base
- * @flags: argument flags
+ * @flags: argument
  *
  * Return: string
  */
-char *convert_number(long int num, int base, int flags)
+char *convert_num(long int num, int base, int flags)
 {
 	static char *array;
 	static char buffer[50];
