@@ -169,7 +169,7 @@ int _atoi(char *);
 /* toem_errors1.c */
 int _err(char *);
 void affiche_err(info_t *, char *);
-int print_d(int, int);
+int pr_d(int, int);
 char *convert_number(long int, int, int);
 void remove_comments(char *);
 
